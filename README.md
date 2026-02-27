@@ -48,39 +48,19 @@ Add your images in the `images/` folder and reference them like this:
 
 ---
 
-## Folder Structure
-tea-leaf-disease-detection-website/
-│
-├── app.py                   <-- Flask main app
-├── templates/               <-- HTML templates
-│   ├── index.html
-│   └── result.html
-├── static/                  <-- CSS/JS files
-│   ├── css/
-│   └── js/
-├── images/                  <-- Add your screenshots and leaf images here
-│   ├── homepage.png
-│   ├── upload_page.png
-│   └── result_page.png
-├── models/                  <-- CNN model files
-└── README.md                <-- Project README (full description)
+# Contribution
+Please follow these steps:
 
-
----
-
-Contribution
-Contributions are welcome! Please follow these steps:
-
-Fork the repository.
-Create a new branch: git checkout -b feature-name
-Commit your changes: git commit -m "Add new feature"
-Push to the branch: git push origin feature-name
+Fork the repository.   
+Create a new branch: git checkout -b feature-name   
+Commit your changes: git commit -m "Add new feature"   
+Push to the branch: git push origin feature-name   
 Create a pull request.
 
 ---
 
-Contact
+# Contact
 
-Author: Gayan Nadeesha
-Email: gayan2001nadeesha@gmail.com
-GitHub: https://github.com/GayanNadeesha
+Author: Gayan Nadeesha   
+Email: gayan2001nadeesha@gmail.com   
+GitHub: https://github.com/GayanNadeesha   
