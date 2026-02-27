@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tea Leaf — Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+      <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo" />
+      <span>Tea Leaf</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="contact_us.html">Contact</a></li>
+          <li class="profile-icon">
+          <a href="userprofile.html" title="Profile">
+            <img src="images/user profile.png" alt="User Profile" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="main">
+    <!-- left sidebar -->
+    <aside class="sidebar" aria-label="Sidebar">
+      <button class="menu-btn">Manage Users</button>
+      <button class="menu-btn">View detection logs</button>
+      <button class="menu-btn">Upload new dataset images</button>
+    </aside>
+
+    <!-- main content -->
+    <main class="content">
+      <section class="panel" aria-labelledby="manage-heading">
+        <h1 id="manage-heading" class="page-title">Manage user</h1>
+
+        <table class="user-table" role="table" aria-label="Users">
+          <thead>
+            <tr>
+              <th class="no-col">No</th>
+              <th class="name-col">Name</th>
+              <th class="phone-col">Phone number</th>
+              <th style="text-align:left">Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="no-col">01</td>
+              <td class="name-col">Hasith Shenal</td>
+              <td class="phone-col">0732567342</td>
+              <td class="actions">
+                <a href="#" class="edit">edit</a>
+                <a href="#" class="delete">Delete</a>
+              </td>
+            </tr>
+
+            <!-- matching empty rows/lines for visual spacing like the image -->
+            <tr class="spacer-row"><td colspan="4"></td></tr>
+            <tr class="spacer-row"><td colspan="4"></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>

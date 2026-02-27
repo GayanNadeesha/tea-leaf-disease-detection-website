@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Tea Leaf System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">     
+      <a href="javascript:history.back()">
+        <img src="images/logo.png" alt="Logo" />
+      </a>
+      <span>Tea Leaf</span>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="hero-image">
+      <img src="images/1 (1).jpg" alt="Tea Leaf Image" />
+    </div>
+    <div class="login-form">
+      <div class="login-logo">
+        <img src="images/logo.png" alt="Login Logo" />
+      </div>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <div class="button">
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Error Modal -->
+  <div id="errorModal">
+    <div id="errorModalContent">
+      <h3 id="errorText">Invalid email or password!</h3>
+      <button onclick="closeErrorModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

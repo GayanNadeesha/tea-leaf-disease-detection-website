@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile - Tea Leaf</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Tea Leaf Logo" />
+      <span>Tea Leaf</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Log Out</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Profile Layout -->
+  <div class="profile-container">
+    <section class="main-profile">
+      <h2>User Profile</h2>
+      <p>Manage your details, view your tier status and change your password</p>
+
+      <!-- General Info -->
+      <div class="profile-section">
+        <h4>General Information</h4>
+        <input type="text" id="general-info" placeholder="Full Name or Info" required />
+        <button onclick="updateGeneralInfo()">Update</button>
+      </div>
+
+      <!-- Security Section -->
+      <div class="profile-section">
+        <h4>Security</h4>
+
+        <!-- Email -->
+        <div class="error" id="email-error" style="color: red;"></div>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Email" required />
+        <button onclick="validateEmail()">Change Email</button>
+      </div>
+
+      <!-- Password -->
+      <div class="profile-section">
+        <div class="error" id="password-error" style="color: red;"></div>
+        <label for="old-password">Old Password</label>
+        <input type="password" id="old-password" placeholder="Old Password" required />
+
+        <label for="new-password">New Password</label>
+        <input type="password" id="new-password" placeholder="New Password" required />
+        <small style="color: #555;">Must be 8+ characters with uppercase, lowercase, number & special character.</small><br><br>
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Confirm Password" required />
+        <button onclick="validatePassword()">Change Password</button>
+      </div>
+
+      <!-- Phone -->
+      <div class="profile-section">
+        <div class="error" id="phone-error" style="color: red;"></div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Phone Number" maxlength="10" pattern="\d{10}" required />
+        <button onclick="validatePhone()">Change Phone Number</button>
+      </div>
+
+    </section>
+  </div>
+
+<!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>USEFUL LINKS</h4>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+         <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>OUR SERVICE</h4>
+        <ul>
+          <li>Web Design</li>
+          <li>Web Development</li>
+          <li>Graphic Design</li>
+          <li>Product management</li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p>A10R, Mihintale Road,<br>Anuradhapura</p>
+        <p>011 2345764</p>
+        <p>logicloard4712@gmail.com</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/twitter.png"/></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/facebook.png"/></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/youtube-play.png"/></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function updateGeneralInfo() {
+      const input = document.getElementById("general-info").value.trim();
+      if (input.length === 0) {
+        alert("Please enter your general information.");
+      } else {
+        alert("General information updated successfully.");
+      }
+    }
+
+    function validateEmail() {
+      const email = document.getElementById("email").value.trim();
+      const error = document.getElementById("email-error");
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!regex.test(email)) {
+        error.textContent = "Email must be valid and contain '@' and a domain (e.g., example@mail.com).";
+      } else {
+        error.textContent = "";
+        alert("Email updated successfully.");
+      }
+    }
+
+    function validatePassword() {
+      const oldPass = document.getElementById("old-password").value.trim();
+      const newPass = document.getElementById("new-password").value.trim();
+      const confirmPass = document.getElementById("confirm-password").value.trim();
+      const error = document.getElementById("password-error");
+
+      const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+      if (oldPass.length === 0) {
+        error.textContent = "Old password is required.";
+      } else if (!strongPasswordRegex.test(newPass)) {
+        error.textContent = "Password must be at least 8 characters, include uppercase, lowercase, number, and special character.";
+      } else if (newPass !== confirmPass) {
+        error.textContent = "New and confirm passwords do not match.";
+      } else if (oldPass === newPass) {
+        error.textContent = "New password must be different from the old one.";
+      } else {
+        error.textContent = "";
+        alert("Password changed successfully.");
+      }
+    }
+
+    function validatePhone() {
+      const phone = document.getElementById("phone").value.trim();
+      const error = document.getElementById("phone-error");
+      const regex = /^[0-9]{10}$/;
+
+      if (!regex.test(phone)) {
+        error.textContent = "Enter a valid 10-digit phone number (numbers only).";
+      } else {
+        error.textContent = "";
+        alert("Phone number updated successfully.");
+      }
+    }
+  </script>
+</body>
+</html>
